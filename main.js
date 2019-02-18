@@ -46,21 +46,25 @@ let correctCounter = 0;
 $(document).ready(function () {
     setup();
 
+    //When click on text input, make it blank
     $('#textInput').click(function () {
         $(this).attr('value', '');
     });
 
+    //Prevent refreshing the page when clicking a submit button
     $("#answerForm").submit(function (e) {
         e.preventDefault();
     });
 
+    
     $('#submitButton').click(function () {
-
+        //If answer is shown in input text area, go next question
         if (answerShown) {
             //Add swipe animation
             $('#slide').addClass('swipe');
             answerShown = false;
 
+            //check if we reach the last question
             if (questionNumber < questions.length - 1) {
                 questionNumber++;
                 showNextQuestion();
@@ -69,12 +73,15 @@ $(document).ready(function () {
             }
 
         } else {
+            //If the answer is correct
             if (checkAnswer()) {
 
+                //Show check mark
                 $('#checkMark').css('display','block');
                 $('#checkPath').addClass('checked');
                 $('#submitButton').prop('disabled', true);
 
+                //Go next question
                 setTimeout(function(){
                     $('#slide').addClass('swipe');
                     //Add swipe animation
@@ -88,6 +95,7 @@ $(document).ready(function () {
                     }
                 }, 1000);
             } else {
+                //Make answer text
                 let answer = "";
                 for (let i = 0; i < answers[questionNumber].length; i++) {
                     //avoid showing more than 3 answers
@@ -106,7 +114,7 @@ $(document).ready(function () {
                 $('#slide').addClass('shake');
                 $('#submitButton').attr('value', 'next');
                 $('#answerForm')[0].reset();
-                $('#textInput').prop('disabled', true).attr('value', answer).css('color', 'red');
+                $('#textInput').prop('disabled', true).attr('value', answer).css('color', 'red'); //Show answer in input text area
 
                 setTimeout(
                     function () {
@@ -124,6 +132,7 @@ $(document).ready(function () {
     })
 });
 
+//Set up to show a next question
 let showNextQuestion = () => {
     setTimeout(
         function () {
@@ -141,6 +150,7 @@ let showNextQuestion = () => {
         1000);
 };
 
+//Set up to show a result
 let showResult = () => {
     $('#slide').addClass('swipe');
 
@@ -172,7 +182,7 @@ let showResult = () => {
         1000);
 };
 
-
+//Initial setup 
 let init = () => {
     updateYear();
     reset();
@@ -213,6 +223,7 @@ let setup = () => {
     characterMove(); //Move character if necessary
 };
 
+//Add motion to character
 let characterMove = () => {
     $('#characterArea_character0').animate({left: characterPosition[characterStep]}); //move or stay the character image
 
