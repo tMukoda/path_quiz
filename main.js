@@ -20,9 +20,9 @@ const questions = [
     "You are editing 'index.html' in 'contact' folder. What is the path to the '2019_0.jpg' in '2019' folder?",
 ];
 const answers = [
-    ["js/main.js"],
-    ["html/contact", "html/contact/", "html/contact/index.html", "/html/contact", "/html/contact/", "/html/contact/index.html"],
-    ["images/2018/2018_0.jpg", "/images/2018/2018_0.jpg"],
+    ["js/main.js","/js/main.js","./js/main.js"],
+    ["html/contact", "html/contact/", "html/contact/index.html", "/html/contact", "/html/contact/", "/html/contact/index.html","./html/contact", "./html/contact/", "./html/contact/index.html"],
+    ["images/2018/2018_0.jpg", "/images/2018/2018_0.jpg","./images/2018/2018_0.jpg"],
     ["/css/style.css", "../../css/style.css"],
     ["/html/contact", "/html/contact/", "/html/contact/index.html", "../contact", "../contact/", "../contact/index.html"],
     ["/", "/index.html", "../../", "../../index.html"],
