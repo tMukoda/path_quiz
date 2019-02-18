@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path_Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="init()">
+<div id="navigation">
+    <img id="nagivation_image" src="images/character_3.png">
+    <p id="link_to_git"><a href="https://github.com/tMukoda/path_quiz" target="_blank">GitHub</a></p>
+</div>
+
+<div id="container">
+    <img id="titleImage" src="images/header.png">
+    <div id="slide">
+        <div id="diagramArea">
+            <img id="diagram" src="images/diagram.png">
+            <img id="cursor" src="images/cursor.png">
+            <img id="pencil" src="images/pencil.png">
+        </div>
+        <div id="questionArea">
+            <p id="questionText"></p>
+            <form id="answerForm" onsubmit="checkAnswer()" spellcheck="false">
+                <input id="textInput" type="text" name="answer" value="e.g. example/index.html">
+                <input id="submitButton" class="customButton" type="submit" value="submit">
+            </form>
+            <svg version="1.1" class="svg_figure" id="checkMark"
+                 xmlns="http://www.w3.org/2000/svg"
+                 x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"
+                 height="50" width="50">
+                <path class="path" id="checkPath" stroke-width="20px" stroke-linecap="round" stroke-linejoin="round" d="M14.5,45.5c15.6,13.9,19,39,19,39s22-43,53-72"/>
+            </svg>
+        </div>
+
+        <div id="resultArea">
+            <img id="resultArea_character0" class="resultArea_character" src="images/result_0.png">
+            <img id="resultArea_character1" class="resultArea_character" src="images/result_1.png">
+
+            <p id="resultText"></p>
+            <button id="refresh_button" class="customButton">Try Again!</button>
+
+            <p id="note">*If you find any problem, please <a href="#">contact</a> me.</p>
+        </div>
+    </div>
+
+</div>
+
+<div id="bgDesign">
+    <div id="characterArea">
+        <img id="characterArea_character0" class="characterArea_character" src="images/character_0.png">
+        <img id="characterArea_character1" class="characterArea_character" src="images/character_1.png">
+    </div>
+    <div id="bottomArea"></div>
+</div>
+
+<footer>&copy;</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

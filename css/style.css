@@ -1,0 +1,511 @@
+* {
+    box-sizing: border-box;
+    /*Set margin&padding 0 for all elements in body*/
+    margin: 0;
+    padding: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+p, a, footer {
+    font-family: Helvetica, sans-serif;
+}
+
+a, a:visited, a:active {
+    background-color: yellow;
+    color: #000000;
+    text-decoration: none;
+}
+
+img {
+    display: inline-block;
+}
+
+body {
+    /*background-color: #ffcc66;*/
+    background-color: #fff;
+}
+
+#navigation {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 20;
+}
+
+#nagivation_image {
+    /*-webkit-filter: drop-shadow(0 0 5px #000); !*Check vendor-prefix*!*/
+    /*filter: drop-shadow(0 0 5px #000);*/
+}
+
+#link_to_git {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+#container {
+    position: relative;
+    width: 800px;
+    height: 100%;
+    margin: auto;
+    z-index: 10;
+}
+
+#titleImage {
+    position: absolute;
+    width: 400px;
+    height: 80px;
+    left: 50%;
+    margin-left: -200px;
+    z-index: 10;
+}
+
+#slide {
+    position: absolute;
+    /*Slide Dimension*/
+    width: 800px; /*800px*/
+    height: 540px;
+
+    /*Align the slide center*/
+    left: 50%;
+    margin-left: -400px;
+
+    top: 100px;
+
+    background-color: #fff;
+    -webkit-filter: drop-shadow(0 0 5px #666); /*Check vendor-prefix*/
+    filter: drop-shadow(0 0 5px #666);
+
+    border-radius: 10px;
+}
+
+#slide.shake {
+    animation: shake_action 1s ease-in-out 1 forwards;
+}
+
+#slide.swipe {
+    animation: swipe_action 1s ease-in-out 1 forwards;
+}
+
+#diagramArea {
+    position: absolute;
+    width: 700px;
+    height: 430px;
+    left: 50%;
+    margin-left: -350px;
+    text-align: center;
+    /*border: 2px solid black;*/
+}
+
+#diagram {
+    width: 600px;
+    z-index: 0;
+}
+
+#pencil, #cursor {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    -webkit-filter: drop-shadow(0 0 5px #ff0);
+    filter: drop-shadow(0 0 5px #ff0);
+    animation: drift 1s ease-in-out infinite;
+}
+
+#pencil {
+    left: 0;
+}
+
+#questionArea {
+    position: absolute;
+    top: 430px;
+    width: 700px;
+    height: 100px;
+    left: 50%;
+    margin-left: -350px;
+    /*border: 2px solid black;*/
+
+}
+
+#questionText {
+    font-size: 1em;
+    padding: 10px;
+}
+
+input {
+    position: absolute;
+    top: 50px;
+    border-radius: 3px;
+}
+
+#textInput {
+    left: 10px;
+    width: 70%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1em;
+    border: 3px solid #aaa;
+    padding-left: 10px;
+}
+
+#textInput:disabled {
+    /*-webkit-appearance: none;*/
+    background: #fff;
+}
+
+.customButton {
+    color: #fff;
+    border: 2px solid #ff7777;
+    background-color: #ff7777;
+    -webkit-filter: drop-shadow(0 3px 0 #ff3300); /*Check vendor-prefix*/
+    filter: drop-shadow(0 3px 0 #ff3300);
+    opacity: 0.8;
+    height: 27px;
+    line-height: 1;
+    font-size: 24px;
+    border-radius: 3px;
+    font-weight: bold;
+
+    -webkit-appearance: none; /*Disable iOS default button style*/
+}
+
+.customButton:active{
+    margin-top: 3px;
+    -webkit-filter: none; /*Check vendor-prefix*/
+    filter: none;
+    opacity: 1;
+}
+
+#submitButton {
+    right: 10px;
+    width: 20%;
+}
+
+.svg_figure {
+    position: absolute;
+    stroke-width: 5;
+}
+
+#checkMark{
+    width: 50px;
+    height: 50px;
+    top: 20px;
+    left: -20px;
+    fill: none;
+    stroke: #36dd65;
+    display: none;
+}
+
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: check 1s linear forwards;
+}
+
+#checkPath.checked{
+    animation: check 1s linear forwards;
+}
+
+.customButton:hover {
+    opacity: 1;
+}
+
+#resultArea {
+    position: absolute;
+    width: 700px;
+    height: 540px;
+    left: 50%;
+    margin-left: -350px;
+    text-align: center;
+    /*border: 2px solid black;*/
+    display: none;
+}
+
+.resultArea_character {
+    margin-top: 20px;
+    height: 300px;
+    width: auto;
+    display: none;
+    /*border: 2px solid black;*/
+}
+
+#resultText {
+    position: absolute;
+    width: 100%;
+    font-size: 48px;
+    font-weight: bold;
+    top: 340px;
+    text-align: center;
+    /*border: 1px solid red;*/
+}
+
+#refresh_button {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 400px;
+}
+
+#note {
+    position: absolute;
+    width: 100%;
+    top: 500px;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+#bgDesign {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.characterArea_character {
+    position: absolute;
+    bottom: 50px;
+}
+
+#characterArea_character0 {
+    left: 10%;
+}
+
+#characterArea_character0.jump{
+    animation: jump_action 1s ease-in-out infinite;
+}
+
+#characterArea_character1 {
+    left: 80%;
+    bottom: 50px;
+}
+
+#bottomArea {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: cornflowerblue;
+    /*border-top: 5px solid darkblue;*/
+}
+
+@media screen and (max-width: 600px) {
+    #nagivation_image {
+        height: 50px;
+        width: auto;
+    }
+
+    #link_to_git {
+        position: absolute;
+        top: 5px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #container {
+        width: 95%;
+    }
+
+    #titleImage {
+        width: 250px;
+        height: 50px;
+        left: 0;
+        margin-left: 0;
+    }
+
+    #slide {
+        width: 100%; /*800px*/
+        height: 400px;
+
+        /*Align the slide center*/
+        left: 50%;
+        margin-left: -50%;
+
+        top: 70px;
+    }
+
+    #diagramArea {
+        position: absolute;
+        width: 100%;
+        height: 240px;
+        left: 50%;
+        margin-left: -50%;
+        /*border: 2px solid black;*/
+    }
+
+    #diagram {
+        height: 240px;
+        width: auto;
+    }
+
+    #pencil, #cursor {
+        display: none;
+    }
+
+    #questionArea {
+        position: absolute;
+        top: 240px;
+        width: 90%;
+        height: 160px;
+        left: 50%;
+        margin-left: -45%;
+    }
+
+    #questionText {
+        font-size: 1.25em;
+    }
+
+    input {
+        top: 110px;
+    }
+
+    #textInput {
+        font-size: 1em;
+    }
+
+    .customButton {
+        font-size: 1em;
+        opacity: 1;
+    }
+
+    #checkMark{
+        top: 80px;
+        left: -10px;
+    }
+
+    #resultArea {
+        width: 100%;
+        height: 400px;
+        left: 50%;
+        margin-left: -50%;
+    }
+
+    .resultArea_character {
+        margin-top: 20px;
+        height: 150px;
+        width: auto;
+        /*border: 2px solid black;*/
+    }
+
+    #resultText {
+        width: 100%;
+        top: 200px;
+        /*border: 1px solid red;*/
+    }
+
+    #refresh_button {
+        left: 50%;
+        width: 50%;
+        margin-left: -25%;
+        top: 280px;
+    }
+
+    #note {
+        top: 350px;
+    }
+
+    footer {
+        bottom: 0;
+        width: 100%;
+    }
+
+    .characterArea_character {
+        position: absolute;
+        bottom: 20px;
+        height: 40px;
+        width: auto;
+    }
+
+    #characterArea_character0 {
+        left: 10%;
+    }
+
+    #characterArea_character1 {
+        right: 10%;
+        bottom: 20px;
+    }
+
+    #bottomArea {
+        height: 20px;
+    }
+
+}
+
+
+/*Keyframes*/
+@keyframes drift {
+    0% {
+        margin-top: 0;
+    }
+    50% {
+        margin-top: 5px;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+
+@keyframes swipe_action {
+    0% {
+        left: 50%;
+        opacity: 1;
+    }
+    49% {
+        left: -50%;
+        opacity: 0;
+    }
+    50% {
+        left: 150%;
+        opacity: 0;
+    }
+    100% {
+        left: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes shake_action {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@keyframes jump_action {
+    0% {
+        margin-bottom: 0;
+    }
+    50%{
+        margin-bottom: 10px;
+    }
+    100%{
+        margin-bottom: 0;
+    }
+}
+
+@keyframes check {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
