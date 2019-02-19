@@ -10,14 +10,14 @@ const pencilPosition = [[600, 120], [600, 120], [600, 120], [460, 300], [460, 30
 const cursorPosition = [[370, 220], [540, 300], [100, 300], [280, 220], [540, 300], [600, 120], [370, 220], [190, 300]];
 
 const questions = [
-    "You are editing 'index.html' in 'project' folder. What is the path to the 'main.js'?",
-    "You are editing 'index.html' in 'project' folder. What is the path to the 'index.html' in 'contact' folder?",
-    "You are editing 'index.html' in 'project' folder. What is the path to the '2018_0.jpg' in '2018' folder?",
-    "You are editing 'index.html' in 'profile' folder. What is the path to the 'style.css'?",
-    "You are editing 'index.html' in 'profile' folder. What is the path to the 'index.html' in'contact' folder?",
-    "You are editing 'index.html' in 'profile' folder. What is the path to the 'index.html' in 'project' folder?",
-    "You are editing 'index.html' in 'contact' folder. What is the path to the 'main.js'?",
-    "You are editing 'index.html' in 'contact' folder. What is the path to the '2019_0.jpg' in '2019' folder?",
+    "You are editing 'index.html' in 'project' folder. What is a path to the 'main.js'?",
+    "You are editing 'index.html' in 'project' folder. What is a path to the 'index.html' in 'contact' folder?",
+    "You are editing 'index.html' in 'project' folder. What is a path to the '2018_0.jpg' in '2018' folder?",
+    "You are editing 'index.html' in 'profile' folder. What is a path to the 'style.css'?",
+    "You are editing 'index.html' in 'profile' folder. What is a path to the 'index.html' in'contact' folder?",
+    "You are editing 'index.html' in 'profile' folder. What is a path to the 'index.html' in 'project' folder?",
+    "You are editing 'index.html' in 'contact' folder. What is a path to the 'main.js'?",
+    "You are editing 'index.html' in 'contact' folder. What is a path to the '2019_0.jpg' in '2019' folder?",
 ];
 const answers = [
     ["js/main.js","/js/main.js","./js/main.js"],
