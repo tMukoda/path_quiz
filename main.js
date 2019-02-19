@@ -20,9 +20,9 @@ const questions = [
     "You are editing 'index.html' in 'contact' folder. What is a path to the '2019_0.jpg' in '2019' folder?",
 ];
 const answers = [
-    ["js/main.js","/js/main.js","./js/main.js"],
-    ["html/contact", "html/contact/", "html/contact/index.html", "/html/contact", "/html/contact/", "/html/contact/index.html","./html/contact", "./html/contact/", "./html/contact/index.html"],
-    ["images/2018/2018_0.jpg", "/images/2018/2018_0.jpg","./images/2018/2018_0.jpg"],
+    ["js/main.js", "/js/main.js", "./js/main.js"],
+    ["html/contact", "html/contact/", "html/contact/index.html", "/html/contact", "/html/contact/", "/html/contact/index.html", "./html/contact", "./html/contact/", "./html/contact/index.html"],
+    ["images/2018/2018_0.jpg", "/images/2018/2018_0.jpg", "./images/2018/2018_0.jpg"],
     ["/css/style.css", "../../css/style.css"],
     ["/html/contact", "/html/contact/", "/html/contact/index.html", "../contact", "../contact/", "../contact/index.html"],
     ["/", "/index.html", "../../", "../../index.html"],
@@ -56,7 +56,7 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-    
+
     $('#submitButton').click(function () {
         //If answer is shown in input text area, go next question
         if (answerShown) {
@@ -77,12 +77,12 @@ $(document).ready(function () {
             if (checkAnswer()) {
 
                 //Show check mark
-                $('#checkMark').css('display','block');
+                $('#checkMark').css('display', 'block');
                 $('#checkPath').addClass('checked');
                 $('#submitButton').prop('disabled', true);
 
                 //Go next question
-                setTimeout(function(){
+                setTimeout(function () {
                     $('#slide').addClass('swipe');
                     //Add swipe animation
                     characterStep++;
@@ -127,7 +127,7 @@ $(document).ready(function () {
 
     });
 
-    $('#refresh_button').click(function(){
+    $('#refresh_button').click(function () {
         reset();
     })
 });
@@ -218,7 +218,7 @@ let setup = () => {
     $('#textInput').prop('disabled', false).css('color', 'black'); //enable input
     $('#submitButton').attr('value', 'submit'); //Set text for submit button
     $('#answerForm')[0].reset(); //reset form
-    $('#checkMark').css('display','none');
+    $('#checkMark').css('display', 'none');
     $('#checkPath').removeClass('checked');
     characterMove(); //Move character if necessary
 };
@@ -248,8 +248,10 @@ let reset = () => {
     $('#diagramArea').css('display', 'block');
     $('#resultArea').css('display', 'none');
     $('.resultArea_character').css('display', 'none');
-    $('#checkMark').css('display','none');
+    $('#checkMark').css('display', 'none');
     $('#checkPath').removeClass('checked');
+    $('#slide').removeClass('swipe');
+    $('#submitButton').prop('disabled', false);
 };
 
 //change the positions of both cursor and pencil
